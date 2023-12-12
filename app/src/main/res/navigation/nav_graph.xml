@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.kotlin.MainFragment"
+        android:label="Main"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_fetchingFragment"
+            app:destination="@id/fetchingFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_insertionFragment"
+            app:destination="@id/insertionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/insertionFragment"
+        android:name="com.example.kotlin.InsertionFragment"
+        android:label="Add a new trip"
+        tools:layout="@layout/fragment_insertion" />
+        <action
+            android:id="@+id/action_insertionFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    <fragment
+        android:id="@+id/fetchingFragment"
+        android:name="com.example.kotlin.FetchingFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_fetching" >
+        <action
+            android:id="@+id/action_fetchingFragment_to_fragment_ride_details"
+            app:destination="@id/rideDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/rideDetailsFragment"
+        android:name="com.example.kotlin.RideDetailsFragment"
+        android:label="Trip Details"
+        tools:layout="@layout/fragment_ride_details" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.kotlin.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+
+
+
+</navigation>
